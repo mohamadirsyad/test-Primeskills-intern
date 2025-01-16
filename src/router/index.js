@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import CommentsTable from "../pages/CommentsTable.vue"; // Pastikan path ini sesuai
+import CommentsTable from "../pages/CommentsTable.vue";
 
 const routes = [
   {
     path: "/",
     name: "CommentsTable",
-    component: CommentsTable, // Komponen yang akan ditampilkan pada path ini
+    component: CommentsTable,
   },
 ];
 
@@ -14,4 +14,4 @@ const router = createRouter({
   routes,
 });
 
-export default router; // Pastikan meng-export objek router
+export default router;

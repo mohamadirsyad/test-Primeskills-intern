@@ -20,12 +20,12 @@ export default {
   },
   data() {
     return {
-      query: this.modelValue, // Bind query to modelValue
+      query: this.modelValue,
     };
   },
   watch: {
     query(newQuery) {
-      this.$emit("update:modelValue", newQuery); // Emit query to parent via update:modelValue
+      this.$emit("update:modelValue", newQuery);
     },
   },
 };

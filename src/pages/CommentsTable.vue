@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-4">
-    <!-- Search Bar Component at the top -->
+    <!-- Search Bar Component -->
     <SearchBar v-model="searchQuery" />
 
     <!-- Table -->
@@ -21,7 +21,7 @@
       </tbody>
     </table>
 
-    <!-- Pagination Component at the bottom -->
+    <!--Ini Pagination Component -->
     <Pagination
       :page="page"
       :totalPages="totalPages"
@@ -42,12 +42,12 @@ export default {
     Pagination,
   },
   setup() {
-    const comments = ref([]); // To store fetched data
-    const searchQuery = ref(""); // Store search query
-    const page = ref(1); // Current page
-    const itemsPerPage = 10; // Items per page
+    const comments = ref([]);
+    const searchQuery = ref("");
+    const page = ref(1);
+    const itemsPerPage = 10;
 
-    // Fetch data from API on component mount
+    // Fetch data dengan mount
     onMounted(async () => {
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/posts"
@@ -55,7 +55,6 @@ export default {
       comments.value = await response.json();
     });
 
-    // Filter comments based on the search query
     const filteredComments = computed(() => {
       return comments.value.filter((comment) => {
         const searchTerm = searchQuery.value.toLowerCase();
@@ -66,7 +65,6 @@ export default {
       });
     });
 
-    // Calculate the total number of pages
     const totalPages = computed(() => {
       return Math.ceil(filteredComments.value.length / itemsPerPage);
     });
@@ -78,7 +76,6 @@ export default {
       return filteredComments.value.slice(startIndex, endIndex);
     });
 
-    // Change the current page
     const changePage = (newPage) => {
       if (newPage >= 1 && newPage <= totalPages.value) {
         page.value = newPage;
