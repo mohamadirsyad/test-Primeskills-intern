@@ -1,4 +1,6 @@
 # Vue 3 + Vite
+Link : https://vercel.com/icaddds-projects/test-primeskills-intern
+prompt ChatGPT : https://chatgpt.com/share/6788dbef-12f0-8004-a712-5452332a2060
 
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
